@@ -103,3 +103,18 @@ body {
   background-color: transparent;
   color: rgb(78, 78, 78);
 }
+
+/* SCREEN ///////////////////////////////////////////////////////////////////////////////////////////////// */
+.screen-container {
+  width: 350px;
+  height: 350px;
+  margin: 0px auto;
+  background-color: rgb(202, 202, 202);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  transition: transform ease-in-out 0.2s;
+}
