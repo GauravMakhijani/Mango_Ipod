@@ -8,12 +8,98 @@ body {
 }
 
 .App {
-  height: 400px;
-  width: 300px;
-  background-color: gray;
   position: relative;
-  border-radius: 5%;
+  margin: 1% auto 0px auto;
+  width: min-content;
+  padding: 20px 10px 5px 10px;
+  border-radius: 20px;
+  background-image: url("https://image.freepik.com/free-vector/dark-background-gradient-geometric-models_23-2148430535.jpg");
   box-shadow: 0px 0px 12px 2px black;
-  top: 50px;
-  left: 450px; /*temprory*/
+  background-size: cover;
+}
+
+.buttons-container {
+  width: 260px;
+  height: 260px;
+  border: 1px solid grey;
+  margin: 10px auto 0px auto;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(221, 221, 221);
+}
+
+.center-circle {
+  width: 50%;
+  height: 50%;
+  background-color: rgb(90, 90, 90);
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  outline: none;
+  border: none;
+}
+.menu-button {
+  position: absolute;
+  top: 0px;
+  height: 25%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 37% 37% 0% 0%;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: rgb(78, 78, 78);
+}
+.left-button {
+  position: absolute;
+  left: 0px;
+  width: 25%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 37% 0% 0% 37%;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: rgb(78, 78, 78);
+}
+.right-button {
+  position: absolute;
+  right: 0px;
+  width: 25%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0% 37% 37% 0%;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: rgb(78, 78, 78);
+}
+.play-pause {
+  position: absolute;
+  bottom: 0px;
+  height: 25%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 0% 37% 37%;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: rgb(78, 78, 78);
 }
