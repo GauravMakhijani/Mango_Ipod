@@ -2,12 +2,12 @@ import React, { Component } from "react";
 
 class MenuItems extends Component {
   render() {
-    const { options } = this.props;
+    const { options, selected } = this.props;
     return (
       <React.Fragment>
-        {options.map((item) => {
+        {options.map((item, index) => {
           return (
-            <div>
+            <div className={selected === index ? "selected" : ""} key={index}>
               <p>{item}</p>
             </div>
           );

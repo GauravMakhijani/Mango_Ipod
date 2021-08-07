@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MenuItems from "./MenuItems";
 class Menu extends Component {
   render() {
-    const { options } = this.props;
+    const { options, selected } = this.props;
     return (
       <div className="screen-menu">
         <div className="app-logo">
@@ -10,7 +10,7 @@ class Menu extends Component {
             <i>MANGO POD</i>
           </h3>
         </div>
-        <MenuItems options={options} />
+        <MenuItems options={options} selected={selected} />
       </div>
     );
   }
