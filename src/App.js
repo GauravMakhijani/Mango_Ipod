@@ -4,7 +4,7 @@ import React from "react";
 import Screen from "./Screen";
 import $ from "jquery";
 import ZingTouch from "zingtouch";
-import firebase from "./firebase";
+// import firebase from "./firebase";
 
 class App extends React.Component {
   constructor() {
@@ -17,6 +17,9 @@ class App extends React.Component {
       showPage: -1,
       general_menu: ["Games", "Music", "Settings", "Cover Flow"],
       songs_sub_menu: ["All Songs", "Artists", "Albums"],
+      current_music_selection: 0,
+      song_index: -1,
+      currently_on_play_music_screen: false,
     };
   }
   componentDidMount() {
@@ -71,6 +74,7 @@ class App extends React.Component {
   handleSelectPress = () => {
     let screenMenuClassList =
       document.getElementsByClassName("screen-menu")[0].classList;
+
     if (screenMenuClassList.contains("width-50")) {
       // $(".screen-menu").removeClass("width-50"); //hide menu
       if (this.state.selected === 1 && this.state.options.length === 4) {
@@ -88,6 +92,9 @@ class App extends React.Component {
       });
       $(".screen-menu").removeClass("width-50"); //hide menu
     } else {
+      if (this.state.selected === 0 && this.state.options.length === 3) {
+        return;
+      }
       $(".screen-menu").addClass("width-50"); //show menu
     }
   };
@@ -127,7 +134,14 @@ class App extends React.Component {
     //console.log(options);
     return (
       <div className="App">
-        <Screen options={options} selected={selected} showPage={showPage} />
+        <Screen
+          options={options}
+          selected={selected}
+          showPage={showPage}
+          currentMusicSelection={this.state.current_music_selection}
+          songIndex={this.state.song_index}
+          currentlyOnPlayMusicScreen={this.currentlyOnPlayMusicScreen}
+        />
         <Button
           onMenuPress={this.handleMenuPress}
           onSelectPress={this.handleSelectPress}

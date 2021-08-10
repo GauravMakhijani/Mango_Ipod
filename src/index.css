@@ -188,3 +188,55 @@ body {
   box-sizing: border-box;
   overflow: hidden;
 }
+/* ALL SONGS SCREEN ///////////////////////////////////////////////////////////// */
+.all-songs {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.all-songs-heading {
+  padding-bottom: 10px;
+  background-color: #6610f2;
+  margin: 0px;
+  height: 10%;
+  color: white;
+}
+.all-songs-list {
+  background-color: #343a40;
+  height: 86%;
+}
+.all-songs-list > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(0, 0, 0);
+  width: 1005;
+  height: 14%;
+  color: white;
+}
+@keyframes highlight {
+  0% {
+    color: #ff0053;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: #ff0053;
+  }
+}
+.instruction-all-songs {
+  height: 20%;
+  background-color: #17a2b8;
+  color: white;
+
+  animation-name: highlight;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+.selected-song {
+  background-color: #007bff;
+}
