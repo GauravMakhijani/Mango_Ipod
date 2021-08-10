@@ -4,6 +4,7 @@ import React from "react";
 import Screen from "./Screen";
 import $ from "jquery";
 import ZingTouch from "zingtouch";
+import firebase from "./firebase";
 
 class App extends React.Component {
   constructor() {
@@ -72,7 +73,16 @@ class App extends React.Component {
       document.getElementsByClassName("screen-menu")[0].classList;
     if (screenMenuClassList.contains("width-50")) {
       // $(".screen-menu").removeClass("width-50"); //hide menu
-
+      if (this.state.selected === 1 && this.state.options.length === 4) {
+        this.setState({
+          options: this.state.songs_sub_menu,
+          selected: 0,
+          showPage: -1,
+          // song_index: -1, //we dont want to play any song
+        });
+        this.temp_selected = 0;
+        return;
+      }
       this.setState({
         showPage: this.state.selected,
       });
