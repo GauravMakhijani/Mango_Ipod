@@ -4,7 +4,7 @@ import React from "react";
 import Screen from "./Screen";
 import $ from "jquery";
 import ZingTouch from "zingtouch";
-// import firebase from "./firebase";
+import firebase from "./firebase";
 
 class App extends React.Component {
   constructor() {
@@ -99,24 +99,65 @@ class App extends React.Component {
     }
   };
   handleRightPress = () => {
-    // let screenMenuClassList =
-    //   document.getElementsByClassName("screen-menu")[0].classList;
-    // if (screenMenuClassList.contains("width-50")) {
-    //   $(".screen-menu").removeClass("width-50"); //hide menu
-    // } else {
-    //   $(".screen-menu").addClass("width-50"); //show menu
-    // }
-    console.log("done");
+    let screenMenuClassList =
+      document.getElementsByClassName("screen-menu")[0].classList;
+
+    if (screenMenuClassList.contains("width-50")) {
+      return;
+    } else {
+      if (this.state.options.length === 3) {
+        //I must be on the music section
+        if (this.state.showPage === 0) {
+          //I am on all songs page
+          if (this.state.current_music_selection === 5)
+            //If I am playing the music at 5th index then I will need to reduce the index to 0 on next right button click.
+            this.setState({
+              current_music_selection: 0,
+              song_index: -1,
+            });
+          else
+            this.setState({
+              current_music_selection: this.state.current_music_selection + 1,
+              song_index: -1,
+            });
+        }
+      }
+    }
   };
   handleLeftPress = () => {
-    // let screenMenuClassList =
-    //   document.getElementsByClassName("screen-menu")[0].classList;
-    // if (screenMenuClassList.contains("width-50")) {
-    //   $(".screen-menu").removeClass("width-50"); //hide menu
-    // } else {
-    //   $(".screen-menu").addClass("width-50"); //show menu
-    // }
-    console.log("done");
+    let screenMenuClassList =
+      document.getElementsByClassName("screen-menu")[0].classList;
+
+    if (screenMenuClassList.contains("width-50")) {
+      if (this.state.options.length === 3) {
+        this.setState({
+          options: this.state.general_menu,
+          selected: 0,
+          showPage: -1,
+          // song_index: -1, //we dont want to play any song
+        });
+        this.temp_selected = 0;
+        return;
+      }
+    } else {
+      if (this.state.options.length === 3) {
+        //I must be on the music section
+        if (this.state.showPage === 0) {
+          //I am on all songs page
+          if (this.state.current_music_selection === 0)
+            //If I am playing the music at 5th index then I will need to reduce the index to 0 on next right button click.
+            this.setState({
+              current_music_selection: 5,
+              song_index: -1,
+            });
+          else
+            this.setState({
+              current_music_selection: this.state.current_music_selection - 1,
+              song_index: -1,
+            });
+        }
+      }
+    }
   };
   handlePausePress = () => {
     // let screenMenuClassList =
