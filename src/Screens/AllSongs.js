@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import firebase from "firebase";
+import PlayMusic from "./PlayMusic";
 
 class AllSongs extends Component {
   constructor() {
@@ -40,6 +41,17 @@ class AllSongs extends Component {
       });
   }
   render() {
+    //console.log("songindex", this.props.songIndex);
+    if (this.props.songIndex !== -1) {
+      return (
+        <PlayMusic
+          songIndex={this.props.songIndex}
+          Songs={this.state.all_songs_list}
+          currentlyOnPlayMusicScreen={this.props.currentlyOnPlayMusicScreen}
+          playPauseButtonClicked={this.props.playPauseButtonClicked}
+        />
+      );
+    }
     return this.state.loading ? (
       <div className="loading-screen">
         <h1>Loading...</h1>

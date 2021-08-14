@@ -16,7 +16,10 @@ class Button extends React.Component {
         <button className="right-button" onClick={this.props.onRightPress}>
           <i className="fa fa-forward"></i>
         </button>
-        <button className="play-pause" onClick={this.props.onPausePress}>
+        <button
+          className="play-pause"
+          onClick={this.props.playPauseButtonClicked}
+        >
           <i className="fa fa-play"></i>/<i className="fa fa-pause"></i>
         </button>
       </div>

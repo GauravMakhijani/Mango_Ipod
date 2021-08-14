@@ -28,6 +28,7 @@ class Screen extends React.Component {
             currentMusicSelection={currentMusicSelection}
             songIndex={songIndex}
             currentlyOnPlayMusicScreen={currentlyOnPlayMusicScreen}
+            playPauseButtonClicked={this.props.playPauseButtonClicked}
           />
         ) : (
           ""
