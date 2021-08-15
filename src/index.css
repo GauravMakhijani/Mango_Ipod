@@ -29,7 +29,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(221, 221, 221);
+  background-image: radial-gradient(#ffffff, #c0c1c1);
+  /* background-color: rgb(221, 221, 221); */
 }
 
 .center-circle {
